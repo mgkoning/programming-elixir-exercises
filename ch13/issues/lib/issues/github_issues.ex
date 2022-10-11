@@ -7,7 +7,7 @@ defmodule Issues.GithubIssues do
     |> handle_response
   end
 
-  @github_url Application.get_env(:issues, :github_url)
+  @github_url Application.compile_env(:issues, :github_url)
 
   def issues_url(user, project) do
     "#{@github_url}/repos/#{user}/#{project}/issues"
